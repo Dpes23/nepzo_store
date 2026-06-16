@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepzo Store - Step Into Style & Beyond</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- --- HEADER --- -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#shop" class="logo" id="logoLink">
+                    <img src="assets/logo.png" alt="Nepzo Logo">
+                    <span>NEPZO<span class="gradient-text">STORE</span></span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#shop" class="active" id="navShop">Shop</a></li>
+                    <li><a href="#about" id="navAbout">About</a></li>
+                    <li><a href="#contact" id="navContact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="cart-icon-btn" id="openCartBtn" aria-label="Open Cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <a href="#admin" class="admin-link" id="navAdmin"><i class="fa-solid fa-lock"></i> Admin</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- --- MAIN SHOP INTERFACE --- -->
+    <main id="shopView">
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-content">
+                <span class="hero-tag">Premium Footwear Collection</span>
+                <h1>Step Into <br><span class="gradient-text">Style & Beyond</span></h1>
+                <p>Welcome to Nepzo Store. We offer high-quality, premium footwear designed to match your lifestyle. Find your perfect fit and walk with confidence today!</p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn-primary">Browse Collection <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#about" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-circle"></div>
+                <div class="hero-image-card" id="featuredHeroCard">
+                    <img src="assets/shoe_runner.png" alt="Featured Run Shoe" id="heroShoeImg">
+                    <div class="hero-card-info">
+                        <div>
+                            <span class="badge badge-hot">Featured</span>
+                            <div class="hero-card-title">Nepzo Volt Pro</div>
+                        </div>
+                        <div class="hero-card-price">Rs. 3,500</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-sec">
+            <div class="container">
+                <div class="categories-tabs" id="categoryTabs">
+                    <button class="tab-btn active" data-category="footwear">
+                        <i class="fa-solid fa-shoe-prints"></i> Footwear
+                    </button>
+                    <button class="tab-btn" data-category="apparel">
+                        <i class="fa-solid fa-shirt"></i> Apparel <span class="coming-soon">Soon</span>
+                    </button>
+                    <button class="tab-btn" data-category="accessories">
+                        <i class="fa-solid fa-glasses"></i> Accessories <span class="coming-soon">Soon</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog Section -->
+        <section class="catalog-sec container" id="catalog">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2 id="catalogTitle">Our Footwear Collection</h2>
+                    <p id="catalogSub">Handpicked premium sneakers for everyday performance and urban style.</p>
+                </div>
+            </div>
+
+            <!-- Filters Toolbar -->
+            <div class="filter-controls">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search shoes by name, brand, or color...">
+                </div>
+                
+                <select class="filter-select" id="brandFilter">
+                    <option value="all">All Brands</option>
+                    <option value="nepzo">Nepzo Brand</option>
+                    <option value="nike">Nike</option>
+                    <option value="adidas">Adidas</option>
+                    <option value="puma">Puma</option>
+                </select>
+
+                <select class="filter-select" id="sortFilter">
+                    <option value="default">Sort By</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- --- ABOUT VIEW --- -->
+    <main id="aboutView" style="display: none; padding: 5rem 0;">
+        <div class="container" style="max-width: 800px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 3rem; box-shadow: var(--shadow-md);">
+            <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1.5rem; text-align: center;">About Nepzo Store</h2>
+            <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.5rem;">
+                At <strong>Nepzo Store</strong>, we believe that high-quality, premium footwear and fashion shouldn't be out of reach. What started as a dedicated storefront for premium shoes has quickly evolved into an online hub for style.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Our selection of running shoes, casual urban sneakers, and classics are carefully chosen for comfort, craftsmanship, and aesthetics. As we grow, we are excited to expand our catalogue to include top-tier apparel and premium accessories, helping you style your journey from head to toe.
+            </p>
+            <h3 style="font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--primary);">Our Commitment</h3>
+            <ul style="list-style-position: inside; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.5rem; font-size: 1rem;">
+                <li>🔥 <strong>Quality First:</strong> We source only high-grade materials to ensure longevity and ultimate comfort.</li>
+                <li>🚚 <strong>Fast & Safe Delivery:</strong> Prompt delivery options inside and outside the Kathmandu Valley.</li>
+                <li>💬 <strong>Personal Customer Service:</strong> Reach out directly via WhatsApp or phone call anytime!</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- --- CONTACT VIEW --- -->
+    <main id="contactView" style="display: none; padding: 5rem 0;">
+        <div class="container" style="max-width: 800px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 3rem; box-shadow: var(--shadow-md);">
+            <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1.5rem; text-align: center;">Contact Nepzo Store</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 3rem;">Have questions about sizing, delivery, or custom orders? Get in touch with us!</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                    <i class="fa-solid fa-phone" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Call or WhatsApp</h4>
+                    <p style="font-weight: 600; font-size: 1.1rem; color: var(--text-main);">9801315885</p>
+                    <p style="font-weight: 600; font-size: 1.1rem; color: var(--text-main); margin-top: 0.25rem;">9863190896</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; text-align: center;">
+                    <i class="fa-solid fa-envelope" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h4 style="margin-bottom: 0.5rem;">Email Us</h4>
+                    <p style="font-weight: 600; font-size: 1.1rem; color: var(--text-main);">teromero.shop2026@gmail.com</p>
+                </div>
+            </div>
+            
+            <!-- Quick Connect Buttons -->
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="https://wa.me/9779801315885" target="_blank" class="btn-primary" style="background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <a href="https://www.facebook.com/nepzostore" target="_blank" class="btn-secondary">
+                    <i class="fa-brands fa-facebook"></i> Visit Facebook Page
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- --- ADMIN VIEW --- -->
+    <main id="adminView" class="admin-view container">
+        <div class="admin-header">
+            <div>
+                <h2>Admin <span class="gradient-text">Dashboard</span></h2>
+                <p>Welcome back, Store Owner! Manage your orders, sales, and products here.</p>
+            </div>
+            <div class="admin-nav">
+                <button class="btn-secondary" id="logoutAdminBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </div>
+        </div>
+
+        <!-- Metrics Overview -->
+        <div class="admin-stats">
+            <div class="stat-card">
+                <div class="stat-icon sales"><i class="fa-solid fa-money-bill-trend-up"></i></div>
+                <div class="stat-info">
+                    <h4>Total Revenue</h4>
+                    <p id="statRevenue">Rs. 0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orders"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                <div class="stat-info">
+                    <h4>Total Orders</h4>
+                    <p id="statOrders">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon products"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <div class="stat-info">
+                    <h4>Active Catalog</h4>
+                    <p id="statProducts">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Management -->
+        <div class="admin-section">
+            <div class="admin-section-header">
+                <h3>Customer Orders</h3>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Address</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminOrdersTable">
+                        <!-- Populated via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Catalog Inventory Management -->
+        <div class="admin-section">
+            <div class="admin-section-header">
+                <h3>Catalog Management</h3>
+                <button class="btn-primary" id="openAddProductModalBtn"><i class="fa-solid fa-plus"></i> Add New Product</button>
+            </div>
+            <div class="inventory-list" id="adminInventoryList">
+                <!-- Populated via JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- --- SHOPPING CART DRAWER --- -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3><i class="fa-solid fa-bag-shopping gradient-text"></i> Your Shopping Bag</h3>
+                <button class="cart-close-btn" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="cart-items-list" id="cartItemsList">
+                <!-- Dynamic Items -->
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-totals">
+                    <div class="totals-row">
+                        <span>Items Subtotal</span>
+                        <span id="cartSubtotal">Rs. 0</span>
+                    </div>
+                    <div class="totals-row">
+                        <span>Estimated Shipping</span>
+                        <span id="cartShipping">Rs. 0</span>
+                    </div>
+                    <div class="totals-row grand-total">
+                        <span>Grand Total</span>
+                        <span id="cartTotal">Rs. 0</span>
+                    </div>
+                </div>
+                <button class="btn-primary checkout-btn" id="toCheckoutBtn">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- PRODUCT DETAIL MODAL --- -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeProductModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="product-details" id="modalProductDetails">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- --- CHECKOUT MODAL --- -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-content checkout-modal-content">
+            <div class="checkout-header">
+                <h3><i class="fa-solid fa-credit-card gradient-text"></i> Complete Your Order</h3>
+                <button class="modal-close" id="closeCheckoutModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="checkout-body">
+                <form class="checkout-form" id="checkoutForm">
+                    <div class="form-group">
+                        <label for="custName">Full Name *</label>
+                        <input type="text" id="custName" class="form-input" placeholder="e.g. Ram Bahadur" required>
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="custPhone">Contact Number *</label>
+                            <input type="tel" id="custPhone" class="form-input" placeholder="e.g. 98XXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="custEmail">Email Address (Optional)</label>
+                            <input type="email" id="custEmail" class="form-input" placeholder="e.g. ram@gmail.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-row">
+                        <div class="form-group">
+                            <label for="custAddress">Street Address *</label>
+                            <input type="text" id="custAddress" class="form-input" placeholder="e.g. New Road, Ward 22" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="custCity">Delivery Area *</label>
+                            <select id="custCity" class="form-input" required>
+                                <option value="inside">Inside Kathmandu Valley (+Rs. 100)</option>
+                                <option value="outside">Outside Kathmandu Valley (+Rs. 200)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Payment Method *</label>
+                        <div class="payment-methods-grid">
+                            <label class="payment-option-card active" id="payOptCod">
+                                <input type="radio" name="payMethod" value="COD" checked>
+                                <span><i class="fa-solid fa-hand-holding-dollar"></i> Cash on Delivery</span>
+                            </label>
+                            <label class="payment-option-card" id="payOptWallet">
+                                <input type="radio" name="payMethod" value="Digital">
+                                <span><i class="fa-solid fa-qrcode"></i> Wallet QR (eSewa/Khalti)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Digital Wallet Details Panel (Hidden by default) -->
+                    <div class="payment-details-panel" id="walletQrDetailsPanel" style="display: none;">
+                        <div class="qr-mock-container">
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">Please scan the QR code to transfer the amount, then click Submit Order.</p>
+                            <div class="qr-code-box">
+                                <!-- Standard static QR code display -->
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=NepzoStorePaymentAccountDetails9801315885" alt="eSewa Khalti QR Code">
+                            </div>
+                            <p style="font-size: 0.9rem; font-weight: 700; color: var(--primary);">eSewa/Khalti: 9801315885</p>
+                            <p style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;">Account Name: Nepzo Store (Pramila Shrestha)</p>
+                        </div>
+                    </div>
+
+                    <div class="checkout-summary-box">
+                        <div class="summary-row">
+                            <span>Order Subtotal</span>
+                            <span id="summarySubtotal">Rs. 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee</span>
+                            <span id="summaryShipping">Rs. 100</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Payable</span>
+                            <span id="summaryTotal">Rs. 0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="justify-content: center; width: 100%; padding: 1rem; margin-top: 0.5rem;">
+                        <i class="fa-brands fa-whatsapp"></i> Submit Order & Confirm via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- ORDER SUCCESS MODAL --- -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content checkout-modal-content">
+            <div class="success-view">
+                <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+                <h2>Order Placed!</h2>
+                <p>Thank you for shopping with Nepzo Store! Your order has been registered locally. We are now redirecting you to WhatsApp to instantly confirm your order details with us.</p>
+                <div class="checkout-summary-box" style="width: 100%; text-align: left;">
+                    <div class="summary-row"><strong>Customer:</strong> <span id="successCustName">--</span></div>
+                    <div class="summary-row"><strong>Phone:</strong> <span id="successCustPhone">--</span></div>
+                    <div class="summary-row"><strong>Amount:</strong> <span id="successCustTotal" style="color: var(--primary); font-weight: 700;">--</span></div>
+                    <div class="summary-row"><strong>Reference ID:</strong> <span id="successOrderId">--</span></div>
+                </div>
+                <div class="success-buttons">
+                    <button class="btn-primary" id="successWaBtn"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</button>
+                    <button class="btn-secondary" id="successCloseBtn">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- ADMIN ADD PRODUCT MODAL --- -->
+    <div class="modal-overlay" id="addProductModal">
+        <div class="modal-content checkout-modal-content">
+            <div class="checkout-header">
+                <h3><i class="fa-solid fa-circle-plus gradient-text"></i> Add New Product</h3>
+                <button class="modal-close" id="closeAddProductModalBtn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="checkout-body">
+                <form id="addProductForm">
+                    <div class="admin-form-group">
+                        <label for="prodTitle" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Product Title *</label>
+                        <input type="text" id="prodTitle" class="form-input" placeholder="e.g. Neon Runner 3.0" required>
+                    </div>
+                    <div class="form-group-row admin-form-group">
+                        <div>
+                            <label for="prodCategory" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Category *</label>
+                            <select id="prodCategory" class="form-input" required>
+                                <option value="footwear">Footwear</option>
+                                <option value="apparel">Apparel</option>
+                                <option value="accessories">Accessories</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="prodBrand" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Brand *</label>
+                            <input type="text" id="prodBrand" class="form-input" placeholder="e.g. Nike, Adidas, Nepzo" required>
+                        </div>
+                    </div>
+                    <div class="form-group-row admin-form-group">
+                        <div>
+                            <label for="prodPrice" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Price (Rs.) *</label>
+                            <input type="number" id="prodPrice" class="form-input" placeholder="e.g. 4500" required>
+                        </div>
+                        <div>
+                            <label for="prodRating" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Initial Rating (1-5)</label>
+                            <input type="number" step="0.1" min="1" max="5" id="prodRating" class="form-input" placeholder="4.5">
+                        </div>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="prodImage" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Product Image *</label>
+                        <select id="prodImage" class="form-input" required>
+                            <option value="assets/shoe_runner.png">Assets: Running Shoe (Blue/Orange)</option>
+                            <option value="assets/shoe_casual.png">Assets: Urban Sneaker (White/Purple)</option>
+                            <option value="assets/shoe_classic.png">Assets: Classic Retro (Cream/Green)</option>
+                            <option value="assets/shoe_trending.png">Assets: Classic Retro (Cream/Green)</option>
+                            <option value="assets/shoe_fashion.png">Assets: Classic Retro (Cream/Green)</option>
+
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="prodDesc" style="display:block; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:var(--text-muted);">Description *</label>
+                        <textarea id="prodDesc" class="form-input" rows="3" placeholder="Describe materials, fit, comfort..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="justify-content: center; width: 100%; padding: 1rem; margin-top: 1rem;">
+                        <i class="fa-solid fa-save"></i> Save Product
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- --- FOOTER --- -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#shop" class="logo">
+                        <img src="assets/logo.png" alt="Nepzo Logo">
+                        <span>NEPZO<span class="gradient-text">STORE</span></span>
+                    </a>
+                    <p>Elevate your everyday walk. Bringing you premium quality footwear designed for maximum comfort and style. Sizing and delivery options for all locations in Nepal.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/nepzostore" target="_blank" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/9779801315885" target="_blank" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#shop">Shop Catalog</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                        <li><a href="#admin">Admin Login</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact" id="contact">
+                    <h3 class="footer-title">Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+977 9801315885 / 9863190896</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>teromero.shop2026@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nepzo Store. All Rights Reserved. Made for Nepzo Shoes & Apparel.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --- Application Logic JS --- -->
+    <script src="app.js"></script>
+</body>
+</html>
