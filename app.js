@@ -41,7 +41,7 @@ const SEED_PRODUCTS = [
     },
     {
         id: "shoe-4",
-        title: "Nike Air Zoom Pegasus 40",
+        title: "Spring New Style Trendy Sports Casual Shoes",
         category: "footwear",
         brand: "nike",
         price: 3500,
